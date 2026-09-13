@@ -41,6 +41,21 @@ function moverIzquierda(){
     refrescarPantalla();
 }
 
+function moverDerecha(){
+    gatoX = gatoX +10;
+    refrescarPantalla();
+}
+
+function moverArriba(){
+    gatoY = gatoY -10
+    refrescarPantalla();
+}
+
+function moverAbajo(){
+    gatoY = gatoY +10;
+    refrescarPantalla();
+}
+
 function refrescarPantalla(){
     limpiarCanva();
     graficarGato();
