@@ -31,3 +31,18 @@ function graficarComida(){
     ctx.fillRect(comidaX,comidaY,ANCHO_COMIDA,ALTO_COMIDA);*/
     graficarRectangulo(comidaX,comidaY,ANCHO_COMIDA,ALTO_COMIDA,"#BF0A54");
 }
+
+function limpiarCanva(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+}
+
+function moverIzquierda(){
+    gatoX = gatoX -10;
+    refrescarPantalla();
+}
+
+function refrescarPantalla(){
+    limpiarCanva();
+    graficarGato();
+    graficarComida();
+}
