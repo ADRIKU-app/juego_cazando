@@ -10,6 +10,7 @@ let gatoX=canvas.width/2;
 let gatoY=canvas.height/2;
 let comidaX=500-ANCHO_COMIDA;
 let comidaY=500-ALTO_COMIDA;
+let puntaje = 0;
 
 function graficarRectangulo(x,y,ancho,alto,color){
     ctx.fillStyle=color;
@@ -38,21 +39,25 @@ function limpiarCanva(){
 
 function moverIzquierda(){
     gatoX = gatoX -10;
+    detectarColision();
     refrescarPantalla();
 }
 
 function moverDerecha(){
     gatoX = gatoX +10;
+    detectarColision();
     refrescarPantalla();
 }
 
 function moverArriba(){
     gatoY = gatoY -10
+    detectarColision();
     refrescarPantalla();
 }
 
 function moverAbajo(){
     gatoY = gatoY +10;
+    detectarColision();
     refrescarPantalla();
 }
 
@@ -60,13 +65,19 @@ function refrescarPantalla(){
     limpiarCanva();
     graficarGato();
     graficarComida();
-    detectarColision();
 }
 
 function detectarColision(){
     if(gatoX+ANCHO_GATO > comidaX && gatoX < comidaX + ANCHO_COMIDA &&
         gatoY + ALTO_GATO > comidaY && gatoY < comidaY + ALTO_COMIDA
     ){
-        alert("COMIDO")
+        //alert("COMIDO");
+        aparecerComida();
+        puntaje = puntaje +1;
+        mostrarEnSpan("puntos", puntaje);
     }
+}
+function aparecerComida(){
+    comidaX = generarAleatorio(0, canvas.width - ANCHO_COMIDA);
+    comidaY = generarAleatorio(0, canvas.height - ALTO_COMIDA);
 }
