@@ -1,0 +1,3 @@
+Actúa como diseñador gráfico y dale un estilo similar a los que ya creamos antes de los otros proyectos adjuntados para que 
+tenga el mismo estilo ya que las 3 páginas van a funcionar en conjunto, no cambies los ids y entregame los dos códigos actualizados 
+que están adjuntados por separado.

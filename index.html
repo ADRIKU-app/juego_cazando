@@ -1,36 +1,57 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Juego Cazando</title>
+  <!-- Manteniendo la misma fuente de la estética arcade -->
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="cazando.css"/>
   <script src="utilitarios.js"></script>
 </head>
 <body onload="iniciarJuego()">
+  
+  <div class="contenedor">
+    <header>
+      <h1>🐱 Juego Cazando 🐱</h1>
+      <p class="autor">Autor: ADR1KU</p>
+    </header>
 
-  <h1>Juego Cazando</h1>
-  <p>Autor: ADR1KU</p>
-  <canvas id="areaJuego" width="500" height="500"></canvas>
+    <div class="game-wrapper">
+      <div class="panel">
+        <div class="stat-box">
+          Puntos: <span id="puntos" class="valor-puntos">0</span>
+        </div>
+        <div class="stat-box">
+          Tiempo: <span id="tiempo" class="valor-tiempo">10</span>
+        </div>
+      </div>
 
-  <div class="controles">
-    <button onclick="moverArriba()">⬆</button>
-    <br>
-    <button onclick="moverIzquierda()">⬅</button>
-    <button onclick="moverAbajo()">⬇</button>
-    <button onclick="moverDerecha()">➡</button>
-    <button onclick="desaparecerPersonaje()">DESAPARECER PERSONAJE</button>
+      <canvas id="areaJuego" width="500" height="500"></canvas>
+    </div>
+    
+    <!-- Mensaje del sistema (ganar/perder) -->
+    <p id="mensaje" class="mensaje-alerta"></p>
+
+    <!-- Controles de dirección formato cruceta (D-Pad) -->
+    <div class="controles-direccion">
+      <div class="fila-arriba">
+        <button class="btn-control btn-dpad" onclick="moverArriba()">⬆</button>
+      </div>
+      <div class="fila-medio">
+        <button class="btn-control btn-dpad" onclick="moverIzquierda()">⬅</button>
+        <button class="btn-control btn-dpad" onclick="moverAbajo()">⬇</button>
+        <button class="btn-control btn-dpad" onclick="moverDerecha()">➡</button>
+      </div>
+    </div>
+
+    <!-- Controles de acción generales -->
+    <div class="controles-accion">
+      <button class="btn-secundario" onclick="desaparecerPersonaje()">👻 Desaparecer Personaje</button>
+      <button class="btn-accion" onclick="reiniciar()">🔄 Reiniciar</button>
+    </div>
 
   </div>
-
-
-  <div class="panel">
-    <span>Puntos: <span id="puntos">0</span></span>
-    <span>Tiempo: <span id="tiempo">10</span></span>
-  </div>
-  <div class="controles">
-    <button onclick="reiniciar()">REINICIAR</button>
-  </div>
-
-  <p id="mensaje"></p>
 
   <script src="cazando.js"></script>
 </body>
