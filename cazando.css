@@ -74,9 +74,12 @@ header h1 {
 .valor-puntos { color: var(--secondary-color); font-size: 1.5rem; margin-left: 5px; }
 .valor-tiempo { color: var(--primary-color); font-size: 1.5rem; margin-left: 5px; }
 
-/* Lienzo del juego */
+/* Lienzo del juego (ACTUALIZADO CON LA NUEVA IMAGEN ESTELAR) */
 canvas {
-  background-color: #0B0F19;
+  background-image: url('fondo_juego_cazando_2.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   border: 4px solid var(--primary-color);
   border-radius: 16px;
   display: block;
@@ -86,13 +89,13 @@ canvas {
   height: auto;
 }
 
-/* Mensaje del sistema (El ID #mensaje se mantiene intacto) */
+/* Mensaje del sistema */
 #mensaje {
   font-size: 1.5rem;
   font-weight: 600;
   color: var(--alert-color);
   margin: 15px 0;
-  min-height: 30px; /* Evita que el layout salte cuando aparece el texto */
+  min-height: 30px; 
   text-shadow: 0 0 10px rgba(239, 68, 68, 0.4);
 }
 
@@ -148,7 +151,7 @@ button {
   transform: translateY(1px);
 }
 
-/* Controles de Acción (Desaparecer / Reiniciar) */
+/* Controles de Acción */
 .controles-accion {
   display: flex;
   justify-content: center;
@@ -169,7 +172,7 @@ button {
 }
 
 .btn-accion:hover {
-  background-color: #86EFAC; /* Verde más claro */
+  background-color: #86EFAC; 
   transform: translateY(-2px);
   box-shadow: 0 6px 15px rgba(74, 222, 128, 0.4);
 }
