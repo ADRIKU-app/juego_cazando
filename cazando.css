@@ -76,6 +76,7 @@ header h1 {
 
 /* Lienzo del juego (ACTUALIZADO CON LA NUEVA IMAGEN ESTELAR) */
 canvas {
+  
   background-image: url('fondo_juego_cazando_2.jpg');
   background-size: cover;
   background-position: center;
